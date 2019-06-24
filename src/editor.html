@@ -149,10 +149,15 @@ SOFTWARE. -->
 
     <div class="section gf-form-group">
         <h5 class="section-heading">Custom</h5>
+
         <div class="gf-form-inline">
             <div class="gf-form">
-                <label class="gf-form-label width-12">Bottom Title</label>
-                <input type="text" class="gf-form-input width-18" ng-model="ctrl.panel.bottomtitle" ng-change="ctrl.render()" ng-model-onblur>
+                <label class="gf-form-label width-8">Bottom Title</label>
+                <input type="text" class="gf-form-input width-12" ng-model="ctrl.panel.bottomtitle" ng-change="ctrl.render()" ng-model-onblur>
+                <label class="gf-form-label width-8">Font size</label>
+                <div class="gf-form-select-wrapper">
+                    <select class="gf-form-input" ng-model="ctrl.panel.bottomTittleValueFontSize" ng-options="f for f in ctrl.fontSizes" ng-change="ctrl.render()"></select>
+                </div>
             </div>
         </div>
     </div>

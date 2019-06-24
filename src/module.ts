@@ -535,7 +535,7 @@ class BlendStatCtrl extends MetricsPanelCtrl {
             const width = elem.width();
             const height = elem.height();
             // Allow to use a bit more space for wide gauges
-            const dimension = Math.min(width, height * 1.3);
+            const dimension = Math.min(width, height * 1);
 
             ctrl.invalidGaugeRange = false;
             if (panel.gauge.minValue > panel.gauge.maxValue) {
@@ -545,10 +545,10 @@ class BlendStatCtrl extends MetricsPanelCtrl {
 
             const plotCanvas = $('<div></div>');
             const plotCss = {
-                top: '10px',
+                top: '5px',
                 margin: 'auto',
                 position: 'relative',
-                height: height * 0.8 + 'px',
+                height: height * 1 + 'px',
                 width: dimension + 'px',
             };
 
@@ -617,7 +617,7 @@ class BlendStatCtrl extends MetricsPanelCtrl {
             };
 
             if (panel.bottomtitle) {
-              plotCanvas.append(`<div style="position: absolute;bottom: 0;text-align: center;text-transform: capitalize;font-style: italic;width: 100%;">${panel.bottomtitle}</div>`);
+              plotCanvas.append(`<div style="font-size:${panel.bottomTittleValueFontSize};position: absolute;bottom: 0;text-align: center;text-transform: capitalize;font-style: italic;width: 100%;">${panel.bottomtitle}</div>`);
             }
 
             elem.append(plotCanvas);
